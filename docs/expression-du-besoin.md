@@ -20,12 +20,14 @@ Le besoin principal est de pouvoir **identifier rapidement quoi faire autour de 
 
 Pour cela, le voyageur doit pouvoir prendre en compte plusieurs critères :
 
-* sa localisation ;
-* la distance à parcourir ;
-* le temps dont il dispose ;
-* ses centres d’intérêt ;
-* les recommandations d’autres utilisateurs ;
-* le contexte de l’expérience, comme le moment idéal pour la réaliser.
+- sa localisation ;
+- la distance à parcourir ;
+- le temps dont il dispose ;
+- ses centres d’intérêt ;
+- les recommandations d’autres utilisateurs ;
+- les caractéristiques de l’expérience, comme sa catégorie, sa durée ou les conditions nécessaires à sa réalisation.
+
+Le temps disponible constitue notamment un critère important : une expérience nécessitant plusieurs heures ne devrait pas être proposée en priorité à un utilisateur qui ne dispose que de quelques dizaines de minutes.
 
 L’objectif n’est donc pas uniquement de proposer une liste de lieux, mais de permettre à l’utilisateur de trouver une expérience correspondant à **sa situation actuelle**.
 
@@ -39,7 +41,7 @@ Les expériences sont proposées sous la forme de **spots** créés et enrichis 
 
 L’utilisateur peut ainsi consulter les spots proches de lui sur une carte interactive et utiliser différents filtres afin de réduire les résultats et identifier plus rapidement une expérience correspondant à ses besoins.
 
-Spotly cherche également à favoriser la découverte locale et les déplacements à pied ou en mobilité douce lorsque cela est pertinent.
+Spotly vise également à favoriser la découverte locale et les déplacements de proximité, notamment à pied lorsque cela est pertinent.
 
 ## 2.5 Valeur apportée par l'application
 
