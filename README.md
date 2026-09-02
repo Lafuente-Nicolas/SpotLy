@@ -1,4 +1,4 @@
-# Cahier des charges — Spotly
+# Brouillon — Spotly
 
 # 1. Présentation du projet
 
