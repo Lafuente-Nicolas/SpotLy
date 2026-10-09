@@ -1,545 +1,145 @@
-# Brouillon — Spotly
+# Spotly
 
-# 1. Présentation du projet
+> **Find what's worth it, right now.**
 
-## Nom du projet
-Spotly
+Spotly est une application web communautaire de découverte locale destinée aux voyageurs. Elle aide à répondre à une question simple :
 
-## Slogan
-Find what’s worth it, right now.
+> **« Qu'est-ce que je peux faire maintenant, ici, avec le temps que j'ai ? »**
 
-## Concept
-
-Spotly est une application communautaire de micro-découvertes locales destinée aux voyageurs.
-
-L’application permet de découvrir rapidement des lieux, activités et expériences autour de soi selon :
-- la proximité,
-- le temps disponible,
-- les préférences utilisateur,
-- les recommandations d’autres voyageurs.
-
-L’objectif est d’aider les utilisateurs à répondre à la question :
-
-“Qu’est-ce que je peux faire maintenant, ici, avec le temps que j’ai ?”
-
-Chaque spot peut contenir :
-- une durée estimée,
-- une distance réelle,
-- des photos authentiques,
-- des retours d’expérience,
-- des tags et catégories,
-- des informations contextuelles utiles.
-
-Spotly favorise une découverte spontanée, communautaire et éco-responsable du voyage.
+Projet réalisé dans le cadre du titre professionnel **Concepteur Développeur d'Applications (CDA)**, avec une spécialisation en **éco-conception**.
 
 ---
 
-# 2. Objectifs du projet
+## État du projet
 
-## Objectifs principaux
-- Permettre aux voyageurs de trouver rapidement des activités proches.
-- Adapter les recommandations selon le temps disponible.
-- Favoriser les déplacements à pied ou en mobilité douce.
-- Mettre en avant des recommandations communautaires fiables.
-- Simplifier la découverte locale spontanée.
-- Créer une communauté contributive et engagée.
-- Valoriser les commerces et activités locales via une offre professionnelle.
+Le projet est en **phase de conception**. Les spécifications fonctionnelles, les cas d'utilisation et le backlog sont rédigés. La modélisation des données et le développement n'ont pas encore commencé.
 
 ---
 
-# 3. Public cible
+## Le concept
 
-## Cibles principales
-- Voyageurs solo
-- Backpackers
-- Touristes en court séjour
-- Digital nomads
-- Voyageurs longue durée
+Spotly repose sur des **spots** : des lieux, activités ou expériences locales proposés par la communauté. Un point de vue pour le coucher du soleil, un café calme pour travailler, un marché local, une balade courte…
 
-## Cibles secondaires
-- Guides locaux
-- Cafés et coworkings
-- Restaurants
-- Activités touristiques locales
-- Organisateurs d’événements
+Chaque spot indique notamment sa localisation, sa **durée estimée**, sa catégorie, des tags et des photos. En croisant la **position** de l'utilisateur, son **temps disponible** et la durée des spots, Spotly ne propose que des expériences réellement réalisables.
+
+Spotly n'est donc pas un annuaire de lieux touristiques : c'est un outil de **découverte contextualisée**, pensé pour décider vite.
+
+### Public cible
+
+Voyageurs solo, backpackers, touristes en court séjour, digital nomads et voyageurs longue durée. Les profils détaillés sont décrits dans les [personas](docs/personna.md).
 
 ---
 
-# 4. Fonctionnalités principales
+## Périmètre du MVP
 
-## 4.1 Gestion des utilisateurs
+Le MVP comprend **12 User Stories**, détaillées avec leurs critères d'acceptation dans le [backlog](docs/backlog.md).
 
-### Fonctionnalités
-- Inscription
-- Connexion / déconnexion
-- Réinitialisation du mot de passe
-- Vérification email
-- Gestion du profil utilisateur
-- Photo de profil
-- Gestion des favoris
-- Désactivation du compte
-- Historique d’activité
+| Domaine | Fonctionnalités |
+| --- | --- |
+| **Compte** | Créer un compte, se connecter, se déconnecter |
+| **Découverte** | Carte des spots, recherche par mot-clé ou par zone, filtres, **temps disponible** |
+| **Spots** | Consulter un spot, ajouter un spot, modifier ou supprimer ses spots |
+| **Favoris** | Ajouter un spot à ses favoris, consulter ses favoris |
+| **Modération** | Masquer un spot (administrateur) |
 
-### Préférences utilisateur
-- aventure
-- food
-- culture
-- nature
-- détente
-- coworking
+L'utilisation de Spotly nécessite un compte. Les choix qui définissent ce périmètre sont expliqués dans les [décisions de conception](docs/decisions-de-conception.md).
 
 ---
 
-## 4.2 Gestion des spots
+## Vision et évolutions
 
-### Création de spot
-Chaque spot doit contenir :
-- un titre,
-- une description,
-- une catégorie,
-- une localisation GPS,
-- une durée estimée,
-- des tags,
-- des photos.
+Après le MVP, plusieurs évolutions sont prévues ou envisagées :
 
-### Durées disponibles
-- 30 min
-- 1h
-- 2h
-- demi-journée
-- journée
+- **Communauté** : commentaires, notes de 1 à 5, signalement de contenus, profil utilisateur, traitement des signalements.
+- **Compte** : vérification de l'adresse e-mail, réinitialisation du mot de passe, préférences (aventure, food, culture, nature, détente, coworking).
+- **Découverte** : prise en compte du temps de trajet à pied, moment idéal, tri par popularité.
+- **Modération** : suspension de comptes, gestion des catégories depuis l'interface.
+- **Offre professionnelle** : comptes pour les guides, cafés, coworkings, écoles de surf ou restaurants, avec coordonnées, liens, réservation, mise en avant locale et statistiques.
+- **À plus long terme** : notifications, événements à proximité, mode hors ligne, application mobile.
 
-### Catégories possibles
-- café
-- vue
-- marché
-- balade
-- street food
-- coworking
-- rooftop
-- randonnée
-- plage
-- sunset
-
-### Informations complémentaires
-- moment idéal,
-- distance à pied,
-- mini retour d’expérience,
-- météo ou contexte conseillé.
+Ces évolutions ne font pas partie du MVP.
 
 ---
 
-## 4.3 Carte interactive
+## Choix techniques
 
-### Fonctionnalités
-- Affichage des spots autour de l’utilisateur
-- Géolocalisation
-- Filtres dynamiques
-- Clustering des spots proches
-- Affichage par catégorie
-- Affichage par popularité
-- Affichage des favoris
-- Chargement dynamique des spots
+| Domaine | Technologie |
+| --- | --- |
+| Interface | React, TypeScript, Vite |
+| Styles | Tailwind CSS |
+| Cartographie | MapLibre GL JS |
+| API | Node.js, Express (API REST) |
+| Base de données | PostgreSQL, Prisma |
+| Médias | Cloudinary |
 
-### Filtres disponibles
-- catégorie,
-- durée,
-- proximité,
-- popularité,
-- tags,
-- moment idéal.
+Les choix et les versions sont justifiés dans le [cahier des charges technique](docs/Brouillon-cahier-des-charges-tech.md), en cours de rédaction.
 
 ---
 
-## 4.4 Recherche
+## Éco-conception
 
-### Fonctionnalités
-- Recherche textuelle
-- Recherche par géolocalisation
-- Recherche par filtres combinés
-- Suggestions intelligentes
+L'éco-conception guide les choix techniques et doit être démontrée par des mesures. Les principaux leviers identifiés sont :
 
----
+- le poids des images : compression, format WebP, tailles adaptées, 5 photos maximum par spot ;
+- le chargement des seuls spots de la zone visible de la carte, avec regroupement des marqueurs ;
+- la limitation des requêtes réseau et la pagination ;
+- la sobriété fonctionnelle et la limitation des dépendances.
 
-## 4.5 Interactions sociales
-
-### Fonctionnalités
-- Likes
-- Commentaires
-- Sauvegarde en favoris
-- Partage de spots
-- Signalement de contenu
-
-### Fonctionnalités optionnelles
-- Réponses aux commentaires
-- Suivi d’utilisateurs
+Voir la [démarche d'éco-conception](docs/démarche-éco-conception.md), le [contexte de l'analyse](eco/context.md) et l'[analyse des impacts](eco/analyse-des-impacts.md).
 
 ---
 
-## 4.6 Notifications
+## Sécurité et données personnelles
 
-### Notifications possibles
-- Nouveau like
-- Nouveau commentaire
-- Spot validé
-- Réponse professionnelle
-- Événement proche
+- Mots de passe hachés, sessions limitées dans le temps, limitation des tentatives de connexion.
+- Validation de toutes les données par l'API, même si elles sont déjà contrôlées dans l'interface.
+- Droits vérifiés côté serveur : un utilisateur ne modifie que ses propres contenus, la modération est réservée aux administrateurs.
+- Protection des données de localisation et collecte limitée aux données nécessaires.
 
 ---
 
-## 4.7 Administration
+## Identité visuelle
 
-### Fonctionnalités administrateur
-- Gestion des utilisateurs
-- Gestion des spots
-- Validation et modération des contenus
-- Gestion des signalements
-- Gestion des catégories
-- Suspension de comptes
-- Consultation des statistiques
+Une interface moderne, minimaliste et **mobile-first**, où la carte reste l'élément principal.
 
----
+| Couleur | Code | Usage |
+| --- | --- | --- |
+| Deep Teal | `#0F4C5C` | Navigation, éléments principaux |
+| Sunset Coral | `#FF7F50` | Actions importantes |
+| Sand Beige | `#F5F1E8` | Fond, selon les écrans |
+| Charcoal | `#1E1E1E` | Texte, interface sombre |
+| Sage Green | `#7A9E7E` | Tags, éléments secondaires |
 
-# 5. Règles métier
-
-## 5.1 Utilisateurs
-- Un utilisateur doit être connecté pour publier un spot.
-- Un utilisateur ne peut posséder qu’un seul compte par adresse email.
-- L’adresse email doit être vérifiée à l’inscription.
-- Un utilisateur peut modifier uniquement ses propres données.
-- Un utilisateur peut supprimer uniquement ses propres contenus.
-- Un utilisateur peut enregistrer des spots en favoris.
-- Un utilisateur peut commenter un spot.
-- Un utilisateur peut liker un spot une seule fois.
-- Un utilisateur peut signaler un contenu.
-- Un utilisateur suspendu ne peut plus publier de contenu.
+- **Typographie** : Inter (SemiBold ou Bold pour les titres, Regular pour le texte, Medium pour les boutons et les tags).
+- **Icônes** : Lucide.
 
 ---
 
-## 5.2 Spots
-- Chaque spot doit contenir :
-  - un titre,
-  - une description,
-  - une catégorie,
-  - une localisation,
-  - une durée estimée.
-- Un spot doit être associé à un utilisateur.
-- Un spot peut contenir plusieurs photos.
-- Un spot doit posséder des coordonnées GPS valides.
-- Un spot peut être modifié uniquement par son créateur ou un administrateur.
-- Un spot peut être supprimé uniquement par son créateur ou un administrateur.
-- Un spot signalé plusieurs fois peut être masqué automatiquement.
-- Un spot ne doit pas contenir de contenu offensant ou illégal.
-- Un spot ne doit pas être publié en doublon.
-- Un spot peut être archivé.
+## Documentation
 
----
+### Analyse du besoin
 
-## 5.3 Carte interactive
-- Les spots doivent être triés selon la distance.
-- Les spots doivent être affichés dynamiquement selon la zone visible.
-- Les spots proches doivent être regroupés automatiquement.
-- Les spots supprimés ou archivés ne doivent plus apparaître publiquement.
-- Les spots populaires peuvent être priorisés.
-- La carte doit rester fluide sur mobile.
+- [Présentation du projet](docs/presentation-du-projet.md)
+- [Expression du besoin](docs/expression-du-besoin.md)
+- [Personas](docs/personna.md)
 
----
+### Spécifications fonctionnelles
 
-## 5.4 Commentaires
-- Un commentaire doit être associé à un utilisateur et à un spot.
-- Un commentaire offensant peut être supprimé.
-- Les interactions doivent être limitées afin d’éviter le spam.
-- Les commentaires peuvent être signalés.
+- [Contraintes et livrables](docs/3.1_Contraintes_et_Livrables.md)
+- [Acteurs et rôles](<docs/3.2_Acteurs_&_roles.md>)
+- [Cas d'utilisation](<docs/3.3_Cas_d'utilisation.md>)
+- [Parcours utilisateurs et scénarios](<docs/3.4_Parcours_utilisateurs_&_scénarios.md>)
+- [User Journeys](docs/Journey.md)
+- [Cahier des charges fonctionnel](docs/cahier-des-charges-fonctionnel.md)
 
----
+### Organisation et décisions
 
-## 5.5 Notifications
-- Les notifications peuvent être activées ou désactivées.
-- Un utilisateur reçoit des notifications selon ses interactions.
+- [Backlog](docs/backlog.md) — suivi dans Trello
+- [Décisions de conception](docs/decisions-de-conception.md)
 
----
+### Technique et éco-conception
 
-## 5.6 Administration
-- Un administrateur peut supprimer un contenu.
-- Un administrateur peut suspendre un utilisateur.
-- Un administrateur peut consulter les signalements.
-- Un administrateur peut masquer un contenu.
-- Un administrateur peut gérer les catégories.
-
----
-
-# 6. Modèle économique
-
-## 6.1 Version gratuite
-
-Les utilisateurs gratuits peuvent :
-- consulter la carte,
-- rechercher des spots,
-- publier des spots,
-- liker et commenter,
-- enregistrer des favoris,
-- filtrer les spots,
-- consulter les profils publics.
-
----
-
-## 6.2 Version Business / Pro
-
-Les professionnels peuvent :
-- publier des activités,
-- afficher leurs coordonnées,
-- ajouter un site web,
-- ajouter Instagram,
-- ajouter WhatsApp,
-- proposer des réservations,
-- publier davantage de médias,
-- accéder à des statistiques.
-
-### Exemples de professionnels
-- guide local,
-- surf school,
-- coworking,
-- rooftop,
-- restaurant,
-- excursion,
-- plongée,
-- spa,
-- location de scooter.
-
----
-
-## 6.3 Fonctionnalités Premium Pro
-- Badge vérifié
-- Mise en avant locale
-- Galerie avancée
-- Statistiques détaillées
-- Événements temporaires
-- Réponses officielles
-- Réservation simplifiée
-
----
-
-# 7. Contraintes techniques
-
-## Frontend
-- Responsive mobile-first
-- Compatibilité tablette et desktop
-- Interface légère et rapide
-
-## Backend
-- API sécurisée
-- Validation serveur obligatoire
-- Gestion des rôles utilisateurs
-
-## Base de données
-- Stockage des utilisateurs
-- Stockage des spots
-- Gestion des interactions
-- Gestion des signalements
-
-## Géolocalisation
-- Autorisation utilisateur obligatoire
-- Fallback si refus
-- Protection de la vie privée
-
----
-
-# 8. Éco-conception
-
-## Optimisations prévues
-- Compression automatique des images
-- Lazy loading
-- Pagination
-- Mise en cache
-- Réduction des appels API
-- Chargement dynamique des données
-- Utilisation de formats optimisés (WebP)
-- Suppression des métadonnées EXIF
-- Limitation des dépendances externes
-- Interface sobre et légère
-- Limitation des animations
-- Mode sombre optionnel
-
----
-
-# 9. Sécurité
-
-## Authentification
-- Mots de passe hashés
-- Authentification sécurisée
-- Sessions limitées dans le temps
-- Protection brute force
-
-## Protection applicative
-- Protection SQL Injection
-- Protection XSS
-- Validation backend obligatoire
-- Vérification des fichiers uploadés
-- Protection anti-spam
-- CAPTCHA à l’inscription
-
-## Vie privée / RGPD
-- Consentement cookies
-- Suppression des données utilisateur
-- Export des données
-- Protection de la localisation
-- Respect du RGPD
-
----
-
-# 10. Workflow des spots
-
-## États possibles
-- brouillon,
-- publié,
-- signalé,
-- masqué,
-- archivé,
-- supprimé.
-
----
-
-# 11. Accessibilité
-
-L’application doit respecter les principes d’accessibilité :
-- responsive mobile,
-- contraste suffisant,
-- navigation clavier,
-- tailles de police lisibles,
-- textes alternatifs pour images.
-
----
-
-# 12. Gestion des performances
-
-## Optimisations prévues
-- lazy loading,
-- pagination,
-- cache,
-- compression des médias,
-- optimisation des requêtes API,
-- chargement conditionnel des données.
-
----
-
-# 13. MVP (Version minimale viable)
-
-## Fonctionnalités MVP
-
-### Utilisateurs
-- inscription,
-- connexion,
-- profil utilisateur.
-
-### Spots
-- création de spots,
-- ajout photo,
-- catégories,
-- durée,
-- géolocalisation.
-
-### Carte
-- carte interactive,
-- affichage des spots proches,
-- filtres.
-
-### Social
-- likes,
-- favoris,
-- commentaires simples.
-
-### Administration
-- modération basique.
-
----
-
-# 14. Roadmap / Évolutions futures
-
-## Évolutions possibles
-- application mobile native,
-- traduction automatique,
-- recommandations par IA,
-- réservation intégrée,
-- événements temporaires avancés,
-- gamification avancée,
-- mode hors ligne,
-- notifications géolocalisées,
-- collections publiques,
-- recommandations personnalisées en temps réel.
-
----
-
-# Architecture technique conseillée
-
-## Frontend
-- React
-- Vite
-- TypeScript
-- Tailwind CSS
-- MapLibre GL JS
-
-## Backend
-- Node.js
-- Express
-
-## Base de données
-- PostgreSQL
-- Prisma
-
-## Services externes
-- Cloudinary
-
----
-
-# Palette de couleurs
-
-| Couleur | Code HEX | Utilisation |
-|---|---|---|
-| Deep Teal | #0F4C5C | Navbar, UI map |
-| Sunset Coral | #FF7F50 | CTA, likes |
-| Sand Beige | #F5F1E8 | Fond général |
-| Charcoal | #1E1E1E | Textes, dark mode |
-| Sage Green | #7A9E7E | Tags, badges |
-
----
-
-# Typographies
-
-| Élément | Police | Style |
-|---|---|---|
-| Titres | Inter SemiBold / Bold | Moderne |
-| Texte | Inter Regular | Lisible mobile |
-| Boutons | Inter Medium | Compact |
-| Tags / badges | Inter Medium | UI moderne |
-
----
-
-# Icônes et illustrations
-
-## Style visuel
-- minimaliste,
-- moderne,
-- mobile-first,
-- épuré.
-
-## Bibliothèque d’icônes
-- Lucide Icons
-
----
-
-# Ambiance visuelle choisie
-
-L’ambiance visuelle de Spotly repose sur un style moderne, minimaliste et mobile-first inspiré des applications de voyage et de cartographie modernes.
-
-L’interface privilégie :
-- la simplicité,
-- la lisibilité,
-- les animations légères,
-- une navigation rapide sur mobile.
-
-La carte interactive constitue l’élément central de l’application avec :
-- un affichage moderne,
-- des markers personnalisés,
-- du clustering dynamique,
-- un mode sombre,
-- une expérience fluide et immersive.
+- [Cahier des charges technique](docs/Brouillon-cahier-des-charges-tech.md) *(brouillon)*
+- [Démarche d'éco-conception](docs/démarche-éco-conception.md)
+- [Contexte de l'analyse d'éco-conception](eco/context.md)
+- [Analyse des impacts](eco/analyse-des-impacts.md)
