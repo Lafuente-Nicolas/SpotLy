@@ -1,276 +1,229 @@
-# Cahier des charges — Spotly
+# Cahier des charges fonctionnel — Spotly
 
-# 1. Présentation du projet
+Ce document décrit les fonctionnalités de Spotly et les règles de gestion qu'elles doivent respecter.
 
-## 1.1 Nom du projet
+La présentation du projet et l'analyse du besoin sont décrites dans des documents dédiés :
 
-**Spotly**
+- [Présentation du projet](presentation-du-projet.md) ;
+- [Expression du besoin](expression-du-besoin.md).
 
-## 1.2 Slogan
+Le périmètre décrit ici est aligné sur les [décisions de conception](decisions-de-conception.md) et sur le [backlog](backlog.md). Pour chaque fonctionnalité, il est précisé si elle fait partie du **MVP** ou d'une **évolution**.
 
-**Find what’s worth it, right now.**
+---
 
-## 1.3 Concept
+## 1. Fonctionnalité principale : la découverte contextualisée
 
-Spotly est une application communautaire de **micro-découvertes locales destinée aux voyageurs**.
-
-L’application a pour objectif de permettre aux utilisateurs de découvrir rapidement des lieux, activités et expériences intéressantes autour d’eux, en tenant compte de plusieurs critères :
-
-- la proximité ;
-- le temps disponible ;
-- les préférences de l’utilisateur ;
-- les recommandations et retours d’expérience de la communauté.
-
-Spotly s’adresse principalement aux voyageurs qui souhaitent découvrir une destination de manière **spontanée et locale**, sans nécessairement avoir planifié leurs activités à l’avance.
-
-L'application repose sur un système de **spots**. Un spot correspond à un lieu, une activité ou une expérience pouvant être découverte par les utilisateurs. Il peut notamment être associé à une localisation, une durée estimée, des photos, une catégorie, des tags et un retour d’expérience.
-
-L’objectif de Spotly est de proposer une expérience de découverte simple et rapide, permettant à l’utilisateur de répondre à une question centrale :
-
-> **« Qu’est-ce que je peux faire maintenant, ici, avec le temps que j’ai ? »**
-
-L’application s’appuie également sur une approche communautaire : les utilisateurs peuvent créer et partager leurs propres spots, mais aussi interagir avec les découvertes des autres membres grâce aux likes, commentaires et favoris.
-
-Spotly cherche enfin à favoriser une découverte locale et plus responsable du voyage, notamment en mettant en avant les expériences accessibles à proximité et les déplacements à pied ou en mobilité douce lorsque cela est pertinent.
-
-# 2. Expression du besoin
-
-## 2.1 Contexte
-
-Lorsqu’un voyageur découvre une nouvelle destination, il peut avoir envie de profiter de son temps libre pour découvrir les environs, sans forcément avoir prévu une activité à l’avance. Il peut notamment disposer d’un temps limité entre deux activités, rechercher une expérience à proximité ou simplement vouloir découvrir un lieu intéressant autour de lui.
-
-Les solutions existantes permettent généralement de rechercher des lieux, des activités ou des points d’intérêt, mais elles peuvent proposer un volume important de résultats et nécessiter plusieurs recherches ou comparaisons avant de trouver une activité réellement adaptée à la situation du voyageur.
-
-Spotly part de ce constat et cherche à simplifier cette découverte en mettant l’accent sur les expériences locales et spontanées.
-
-## 2.2 Problématique
-
-**Comment permettre à un voyageur de trouver rapidement une activité ou une expérience locale pertinente, à proximité de sa position et adaptée au temps dont il dispose ?**
-
-Cette problématique concerne particulièrement les voyageurs qui souhaitent découvrir une destination de manière spontanée, notamment les voyageurs solo, backpackers, touristes en court séjour et digital nomads.
-
-## 2.3 Besoin identifié
-
-Le besoin principal est de pouvoir **identifier rapidement quoi faire autour de soi**, sans devoir parcourir de nombreuses informations ou utiliser plusieurs services différents.
-
-Pour cela, le voyageur doit pouvoir prendre en compte plusieurs critères :
-
-- sa localisation ;
-- la distance à parcourir ;
-- le temps dont il dispose ;
-- ses centres d’intérêt ;
-- les recommandations d’autres utilisateurs ;
-- le contexte de l’expérience, comme le moment idéal pour la réaliser.
-
-L’objectif n’est donc pas uniquement de proposer une liste de lieux, mais de permettre à l’utilisateur de trouver une expérience correspondant à **sa situation actuelle**.
-
-## 2.4 Réponse apportée par Spotly
-
-Spotly est une application communautaire de micro-découvertes locales destinée aux voyageurs.
-
-L’application permet de découvrir des lieux, activités et expériences autour de soi en combinant notamment la proximité, le temps disponible et les préférences de l’utilisateur.
-
-Les expériences sont proposées sous la forme de **spots** créés et enrichis par la communauté. Chaque spot peut notamment contenir une localisation, une durée estimée, des photos, une catégorie, des tags et un retour d’expérience.
-
-L’utilisateur peut ainsi consulter les spots proches de lui sur une carte interactive et utiliser différents filtres afin de réduire les résultats et identifier plus rapidement une expérience correspondant à ses besoins.
-
-Spotly cherche également à favoriser la découverte locale et les déplacements à pied ou en mobilité douce lorsque cela est pertinent.
-
-## 2.5 Valeur apportée par l'application
-
-La principale valeur de Spotly repose sur la **mise en relation entre une situation donnée et une expérience locale pertinente**.
-
-Plutôt que de demander à l’utilisateur de rechercher lui-même une activité parmi un grand nombre de résultats, Spotly cherche à lui permettre de partir de sa situation :
-
-> **« Qu’est-ce que je peux faire maintenant, ici, avec le temps que j’ai ? »**
-
-L’application transforme ainsi une recherche générale d’activités en une découverte contextualisée, rapide et communautaire.
-
-## 2.6 Fonctionnalité principale
-
-### Découverte contextualisée de spots
-
-La fonctionnalité principale de Spotly est la possibilité de **découvrir des spots autour de soi en fonction de sa localisation et du temps disponible**.
-
-L’utilisateur peut :
-
-1. autoriser l’application à accéder à sa localisation ;
-2. consulter les spots disponibles autour de lui ;
-3. indiquer ou sélectionner le temps dont il dispose ;
-4. filtrer les résultats selon ses préférences ;
-5. consulter les informations d’un spot ;
-6. choisir l’expérience qui correspond le mieux à sa situation.
-
-Cette fonctionnalité constitue le cœur de Spotly, car elle répond directement à la problématique identifiée : **aider un voyageur à décider rapidement quoi faire, où il se trouve et avec le temps dont il dispose.**
-
-# 3. Cahier des charges fonctionnel
-
-## 3.1 Fonctionnalité principale : découverte contextualisée
-
-La fonctionnalité centrale de Spotly est de permettre à un voyageur de **découvrir des expériences locales adaptées à sa situation**, notamment en fonction de sa localisation et du temps dont il dispose.
+La fonctionnalité centrale de Spotly est de permettre à un voyageur de **découvrir des expériences locales adaptées à sa situation**, c'est-à-dire à sa position et au temps dont il dispose.
 
 Le parcours principal est le suivant :
 
-1. L'utilisateur ouvre Spotly et autorise l'accès à sa localisation.
-2. L'application identifie les spots disponibles autour de lui.
-3. L'utilisateur indique ou sélectionne le temps dont il dispose.
-4. Il peut affiner les résultats grâce à différents critères : catégorie, distance, tags, popularité ou préférences.
-5. Spotly affiche les résultats correspondants sur la carte.
-6. L'utilisateur sélectionne un spot afin de consulter ses informations.
-7. Il peut ensuite enregistrer le spot en favori, consulter les retours de la communauté ou s'y rendre.
+1. L'utilisateur, connecté, ouvre Spotly et autorise l'accès à sa localisation, ou recherche une zone manuellement.
+2. L'application affiche les spots de la zone sur une carte.
+3. L'utilisateur indique le temps dont il dispose.
+4. Spotly n'affiche plus que les spots dont la durée estimée est compatible avec ce temps.
+5. L'utilisateur peut affiner les résultats par catégorie, tags ou distance.
+6. Il sélectionne un spot pour consulter sa fiche.
+7. Il peut l'enregistrer dans ses favoris ou décider de s'y rendre.
 
-**Valeur fonctionnelle :** cette fonctionnalité permet de réduire le temps nécessaire à la recherche d'une activité et aide l'utilisateur à prendre une décision rapidement, en fonction de sa situation réelle.
+**Valeur fonctionnelle :** cette fonctionnalité réduit le temps nécessaire pour trouver une activité et aide l'utilisateur à décider rapidement, en fonction de sa situation réelle.
 
-## 3.2 Gestion des spots
+---
 
-Les utilisateurs authentifiés peuvent créer des spots afin de partager leurs découvertes avec la communauté.
+## 2. Découverte des spots
 
-Un spot doit notamment comporter :
+### 2.1 Carte interactive et géolocalisation — MVP
 
-- un titre ;
-- une description ;
-- une catégorie ;
-- une localisation GPS ;
-- une durée estimée ;
-- des tags ;
-- une ou plusieurs photos.
+La carte est le principal moyen de découverte des spots. Elle permet :
 
-Les durées proposées sont notamment :
+- d'afficher les spots sous forme de marqueurs, avec un aperçu au clic ;
+- de centrer la carte sur la position de l'utilisateur ;
+- de ne charger que les spots de la zone visible, puis ceux des nouvelles zones lors d'un déplacement ou d'un zoom ;
+- de regrouper les spots proches (clustering).
 
-- 30 minutes ;
-- 1 heure ;
-- 2 heures ;
-- demi-journée ;
-- journée.
+L'application demande l'autorisation d'utiliser la géolocalisation. En cas de refus ou d'indisponibilité, l'utilisateur peut **rechercher une zone** (ville, adresse). La géolocalisation n'est jamais obligatoire.
 
-Un spot peut également contenir des informations complémentaires telles que le moment idéal pour le découvrir, la distance à pied ou un retour d'expérience.
+### 2.2 Temps disponible — MVP
 
-Le créateur peut modifier ou supprimer ses propres spots. Les administrateurs disposent également de droits de modification, suppression et modération.
+L'utilisateur indique le temps dont il dispose parmi des valeurs proposées : 30 minutes, 1 heure, 2 heures, une demi-journée ou une journée.
 
-## 3.3 Carte interactive et géolocalisation
+Seuls les spots dont la durée estimée est inférieure ou égale à ce temps sont alors affichés. Le temps choisi reste visible et modifiable à tout moment, et l'utilisateur peut retirer ce critère.
 
-La carte constitue le principal moyen de visualisation des spots.
+### 2.3 Recherche et filtres
 
-Elle permet notamment :
+| Critère | Périmètre |
+| --- | --- |
+| Recherche par mot-clé | MVP |
+| Recherche d'une zone (ville, adresse) | MVP |
+| Catégorie | MVP |
+| Tags | MVP |
+| Distance maximale | MVP |
+| Temps disponible | MVP |
+| Popularité (selon les notes) | Évolution |
+| Moment idéal | Évolution |
+| Préférences de l'utilisateur | Évolution |
 
-- d'afficher les spots autour de l'utilisateur ;
-- d'utiliser sa position géographique ;
-- d'afficher les spots selon la zone visible ;
-- de regrouper les spots proches grâce au clustering ;
-- de filtrer les spots ;
-- d'afficher les favoris ;
-- de charger dynamiquement les données.
+Les filtres sont combinables. Lorsqu'aucun spot ne correspond, l'application l'indique et propose d'élargir la recherche.
 
-L'application doit demander l'autorisation d'utiliser la géolocalisation. En cas de refus, un fonctionnement alternatif doit être proposé.
+---
 
-## 3.4 Recherche et filtres
+## 3. Gestion des spots
 
-L'utilisateur peut rechercher des spots de différentes manières :
+### 3.1 Contenu d'un spot — MVP
 
-- recherche textuelle ;
-- recherche autour d'une localisation ;
-- combinaison de plusieurs filtres.
+| Donnée | Obligatoire | Précisions |
+| --- | --- | --- |
+| Titre | Oui | |
+| Description | Oui | |
+| Catégorie | Oui | Une seule catégorie principale |
+| Localisation GPS | Oui | Coordonnées validées |
+| Durée estimée | Oui | 30 min, 1 h, 2 h, demi-journée ou journée |
+| Photos | Oui | De 1 à 5 photos |
+| Tags | Non | Choisis dans une liste contrôlée |
+| Créateur | Automatique | L'utilisateur connecté |
+| Date de création | Automatique | |
 
-Les principaux filtres sont :
+Les informations complémentaires envisagées (moment idéal, conditions conseillées, distance à pied) sont des évolutions.
 
-- catégorie ;
-- durée ;
-- proximité ;
-- popularité ;
-- tags ;
-- moment idéal.
+### 3.2 Catégories et tags
 
-Cette fonctionnalité permet de compléter la découverte automatique en donnant davantage de contrôle à l'utilisateur.
+Chaque spot appartient à **une seule catégorie principale**, qui sert à le classer et à choisir son marqueur sur la carte. La liste des catégories est définie par l'administrateur et initialisée en base pour le MVP.
 
-## 3.5 Gestion du compte utilisateur
+Les **tags** précisent un spot sans le classer, par exemple : gratuit, wifi, coucher de soleil, street food, accessible à pied, adapté à la pluie.
 
-L'application permet à l'utilisateur de :
+**Proposition de catégories, à valider :**
 
-- créer un compte ;
-- se connecter et se déconnecter ;
-- réinitialiser son mot de passe ;
-- vérifier son adresse email ;
-- gérer son profil ;
-- ajouter une photo de profil ;
-- gérer ses favoris ;
-- consulter son historique ;
-- désactiver son compte.
+| Catégorie | Exemples de spots |
+| --- | --- |
+| Café | Café calme, salon de thé |
+| Coworking | Espace de coworking |
+| Restauration | Restaurant, stand de street food |
+| Bar et rooftop | Bar, rooftop |
+| Point de vue | Panorama, spot de coucher de soleil |
+| Plage et baignade | Plage, lac, piscine naturelle |
+| Nature et randonnée | Balade, randonnée, parc |
+| Culture et patrimoine | Musée, monument, quartier historique |
+| Marché | Marché local, marché de nuit |
+| Activité | Surf, plongée, atelier |
 
-L'utilisateur peut également renseigner des préférences telles que **aventure, food, culture, nature, détente ou coworking** afin de personnaliser son expérience.
+Cette liste regroupe les catégories citées dans les différents documents du projet et supprime celles qui se recoupaient : « vue » et « sunset » deviennent « Point de vue », « balade » et « randonnée » deviennent « Nature et randonnée ». « Sunset » et « street food » deviennent aussi des tags.
 
-## 3.6 Interactions communautaires
+### 3.3 Création, modification et suppression — MVP
 
-Spotly repose sur une dimension communautaire permettant aux utilisateurs d'interagir avec les spots.
+- Seul un utilisateur connecté peut créer un spot.
+- Un spot est **publié immédiatement** après sa création. La modération intervient ensuite.
+- Le créateur peut **modifier** ou **supprimer** ses propres spots. Un administrateur peut aussi les supprimer.
+- La modification applique les mêmes règles de validation que la création.
+- Les photos retirées ou liées à un spot supprimé sont supprimées du service de stockage des médias.
 
-Les utilisateurs peuvent :
+### 3.4 Statuts d'un spot — MVP
 
-- liker un spot ;
-- commenter ;
-- ajouter un spot à leurs favoris ;
-- partager un spot ;
-- signaler un contenu.
+| Statut | Signification | Visible par les utilisateurs |
+| --- | --- | --- |
+| Publié | Statut par défaut à la création | Oui |
+| Masqué | Retiré par un administrateur | Non |
+| Supprimé | Supprimé par son créateur ou un administrateur (suppression logique) | Non |
 
-Un utilisateur ne peut liker un même spot qu'une seule fois et les interactions doivent être limitées afin de réduire les risques de spam.
+Les statuts « brouillon » et « archivé » sont des évolutions. Le fait qu'un spot soit signalé n'est pas un statut : c'est une information déduite des signalements.
 
-## 3.7 Administration et modération
+---
 
-Une interface d'administration permet de garantir la qualité et la sécurité des contenus publiés.
+## 4. Gestion du compte
 
-L'administrateur peut notamment :
+| Fonctionnalité | Périmètre |
+| --- | --- |
+| Créer un compte (pseudo, adresse e-mail, mot de passe) | MVP |
+| Se connecter, se déconnecter | MVP |
+| Consulter son profil et ses contributions | Évolution (P2) |
+| Modifier son profil | Évolution (P3) |
+| Vérifier son adresse e-mail | Évolution |
+| Réinitialiser son mot de passe | Évolution |
+| Ajouter une photo de profil | Évolution |
+| Renseigner ses préférences | Évolution |
+| Désactiver son compte | Évolution |
 
-- gérer les utilisateurs ;
-- gérer les spots ;
-- modérer les contenus ;
-- consulter les signalements ;
-- gérer les catégories ;
-- suspendre des comptes ;
-- masquer ou supprimer du contenu ;
-- consulter des statistiques.
+L'utilisation de Spotly nécessite un compte, y compris pour consulter la carte. Seules l'inscription et la connexion sont accessibles sans être connecté.
 
-Les utilisateurs suspendus ne peuvent plus publier de contenu.
+---
 
-## 3.8 Notifications
+## 5. Interactions communautaires
 
-Le système peut informer les utilisateurs de différentes actions liées à leur compte ou à leurs contenus :
+### 5.1 Favoris — MVP
 
-- nouveau like ;
-- nouveau commentaire ;
-- validation d'un spot ;
-- réponse d'un professionnel ;
-- événement à proximité.
+L'utilisateur peut ajouter un spot à ses favoris, l'en retirer et consulter la liste de ses favoris. Un favori sert à **conserver** un spot pour le retrouver plus tard.
 
-Les notifications peuvent être activées ou désactivées par l'utilisateur.
+### 5.2 Notes — Évolution (P2)
 
-## 3.9 MVP
+L'utilisateur peut attribuer à un spot une note de 1 à 5, qu'il peut modifier. La note sert à **évaluer** un spot. La note moyenne et le nombre de notes sont affichés sur la fiche.
 
-Pour la première version de Spotly, le périmètre fonctionnel est volontairement limité afin de se concentrer sur la proposition de valeur principale.
+La note est indépendante du commentaire. Les « likes » ne sont pas retenus dans le périmètre actuel : la note joue ce rôle d'appréciation, de façon plus informative. Ils restent une piste d'évolution.
 
-### Fonctionnalités utilisateurs
+### 5.3 Commentaires — Évolution (P2)
 
-- inscription ;
-- connexion ;
-- profil.
+L'utilisateur peut publier un commentaire sur un spot pour partager son expérience, et supprimer ses propres commentaires.
 
-### Fonctionnalités spots
+### 5.4 Signalements — Évolution (P2)
 
-- création ;
-- ajout de photos ;
-- catégories ;
-- durée ;
-- géolocalisation.
+L'utilisateur peut signaler un spot ou un commentaire inapproprié ou incorrect, en choisissant un motif et en ajoutant éventuellement une description.
 
-### Fonctionnalités de découverte
+---
 
-- carte interactive ;
-- affichage des spots proches ;
-- filtres.
+## 6. Administration et modération
 
-### Fonctionnalités communautaires
+L'administrateur est un utilisateur disposant de droits supplémentaires.
 
-- likes ;
-- favoris ;
-- commentaires simples.
+| Fonctionnalité | Périmètre |
+| --- | --- |
+| Masquer un spot, ou le republier | MVP |
+| Supprimer un spot | MVP |
+| Consulter et traiter les signalements (spots et commentaires) | Évolution (P3) |
+| Suspendre un compte | Évolution |
+| Gérer les catégories depuis l'interface | Évolution |
+| Consulter des statistiques | Évolution |
 
-### Administration
+Toutes les autorisations sont vérifiées par l'API, et pas seulement en masquant des boutons dans l'interface.
 
-- modération basique.
+---
+
+## 7. Règles de gestion
+
+### 7.1 Utilisateurs
+
+- Une adresse e-mail ne peut être associée qu'à un seul compte.
+- Un utilisateur doit être connecté pour utiliser l'application, à l'exception de l'inscription et de la connexion.
+- Un utilisateur ne peut modifier que ses propres données et ses propres contenus.
+- Le mot de passe comporte au moins 12 caractères et n'est jamais stocké en clair.
+
+### 7.2 Spots
+
+- Un spot est associé à un seul créateur et à une seule catégorie principale.
+- Un spot comporte un titre, une description, une catégorie, une localisation, une durée estimée et de 1 à 5 photos.
+- Les coordonnées GPS doivent être valides : latitude entre -90 et 90, longitude entre -180 et 180.
+- Un spot peut être modifié ou supprimé par son créateur. Il peut être masqué ou supprimé par un administrateur.
+- Un spot masqué par un administrateur ne peut pas être republié par son créateur.
+- Seuls les spots publiés apparaissent sur la carte, dans les recherches, dans les fiches et dans les favoris.
+
+### 7.3 Interactions
+
+- Un même spot ne peut figurer qu'une seule fois dans les favoris d'un utilisateur.
+- Un utilisateur ne peut attribuer qu'une seule note par spot, comprise entre 1 et 5.
+- Un commentaire est associé à un utilisateur et à un spot. Il ne peut pas être vide.
+- Un signalement est effectué par un utilisateur et vise exactement un contenu : soit un spot, soit un commentaire.
+- Le nombre d'actions d'un même utilisateur sur une courte période est limité, afin de réduire le spam.
+
+### 7.4 Règles à préciser
+
+Les règles suivantes, envisagées au début du projet, ne sont pas retenues tant que leur fonctionnement n'est pas défini :
+
+- **Spot en doublon** : il faudrait définir à partir de quand deux spots sont considérés comme identiques (même nom, distance minimale entre deux spots…).
+- **Masquage automatique après plusieurs signalements** : il faudrait définir un seuil et éviter qu'il soit utilisé pour masquer abusivement un contenu.
+
+---
+
+## 8. Synthèse du périmètre
+
+| Périmètre | Fonctionnalités |
+| --- | --- |
+| **MVP (P1)** | Inscription, connexion, déconnexion ; carte et géolocalisation ; recherche par mot-clé ou par zone ; filtres ; temps disponible ; fiche d'un spot ; ajout, modification et suppression de ses spots ; favoris ; masquage d'un spot par un administrateur |
+| **Évolutions (P2)** | Commentaires, notes, signalements, consultation du profil |
+| **Évolutions (P3)** | Modification du profil, traitement des signalements |
+| **Vision long terme** | Likes, préférences, vérification de l'e-mail, mot de passe oublié, suspension de comptes, gestion des catégories, notifications, partage de spots, événements, offre professionnelle |

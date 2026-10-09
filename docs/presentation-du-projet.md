@@ -27,6 +27,6 @@ L’objectif de Spotly est de proposer une expérience de découverte simple et 
 
 > **« Qu’est-ce que je peux faire maintenant, ici, avec le temps que j’ai ? »**
 
-L’application s’appuie également sur une approche communautaire : les utilisateurs peuvent créer et partager leurs propres spots, mais aussi interagir avec les découvertes des autres membres grâce aux likes, commentaires et favoris.
+L’application s’appuie également sur une approche communautaire : les utilisateurs peuvent créer et partager leurs propres spots, mais aussi interagir avec les découvertes des autres membres grâce aux favoris, aux notes et aux commentaires.
 
 Spotly cherche enfin à favoriser une découverte locale et plus responsable du voyage, notamment en mettant en avant les expériences accessibles à proximité et les déplacements à pied ou en mobilité douce lorsque cela est pertinent.

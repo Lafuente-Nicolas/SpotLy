@@ -8,16 +8,18 @@ Ce document consigne les décisions prises pour lever les incohérences entre le
 
 ## D1 — Périmètre du MVP
 
-**Décision :** le MVP correspond au backlog P1 (US-01 à US-09), complété par deux User Stories :
+**Décision :** le MVP correspond au backlog P1 (US-01 à US-09), complété par trois User Stories :
 
 | US | Intitulé | Priorité |
 |---|---|---|
 | US-16 | Indiquer son temps disponible pour obtenir des spots compatibles | P1 — MVP |
 | US-17 | Masquer un spot (administrateur) | P1 — MVP |
+| US-18 | Gérer ses spots : modifier ou supprimer ses propres spots | P1 — MVP |
 
 **Justification :**
 
 - Le temps disponible est l'élément différenciant de Spotly. Il figure dans la problématique, les parcours et le diagramme UML, mais n'avait aucune User Story : il doit apparaître explicitement dans le MVP.
+- Les spots étant publiés immédiatement, leur auteur doit pouvoir corriger une erreur (durée, position…) qui fausserait les résultats. US-18 a été ajoutée après la mise à jour des cas d'utilisation, qui prévoyaient ce cas sans User Story.
 - La création de spots par la communauté fait partie du MVP. Il faut donc un moyen minimal de retirer un contenu problématique dès la première version, sans attendre le traitement complet des signalements (US-15, P3).
 
 **Conséquence :** le MVP décrit dans le README (§13) et dans le cahier des charges fonctionnel (§3.9), qui incluait profil, likes, commentaires et modération, est remplacé par celui-ci.
@@ -184,7 +186,7 @@ Ces choix ne changent pas le périmètre fonctionnel. Ils seront tranchés avec 
 
 | Priorité | User Stories |
 |---|---|
-| **P1 — MVP** | US-01 à US-09, US-16 (temps disponible), US-17 (masquer un spot) |
+| **P1 — MVP** | US-01 à US-09, US-16 (temps disponible), US-17 (masquer un spot), US-18 (gérer ses spots) |
 | **P2** | US-10 commenter, US-11 noter, US-12 signaler, US-13 consulter son profil |
 | **P3** | US-14 modifier son profil, US-15 traiter les signalements |
 | **Évolutions** | Likes, préférences, brouillon/archivage, vérification e-mail, mot de passe oublié, suspension de compte, notifications, offre professionnelle |
