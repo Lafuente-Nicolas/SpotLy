@@ -57,7 +57,8 @@ Chaque User Story possède des critères d'acceptation. Ceux des User Stories P2
 
 **Critères d'acceptation :**
 
-- Étant donné que je ne suis pas inscrit, quand je renseigne un pseudo, une adresse e-mail et un mot de passe valides, alors mon compte est créé, un message confirme la création et je peux me connecter.
+- Étant donné que je ne suis pas inscrit, quand je renseigne un pseudo, une adresse e-mail et un mot de passe valides et que j'accepte les conditions d'utilisation, alors mon compte est créé, un message confirme la création et je peux me connecter.
+- Je ne peux pas créer de compte sans accepter les conditions d'utilisation.
 - Étant donné qu'une adresse e-mail est déjà utilisée par un compte, quand je tente de m'inscrire avec cette adresse, alors l'inscription est refusée avec un message explicite.
 - Étant donné que mon mot de passe ne respecte pas les règles de sécurité (au moins 12 caractères), quand je valide le formulaire, alors l'inscription est refusée et la règle à respecter m'est indiquée.
 - Le mot de passe n'est jamais stocké en clair : il est haché côté serveur.
@@ -153,6 +154,8 @@ Chaque User Story possède des critères d'acceptation. Ceux des User Stories P2
 **Critères d'acceptation :**
 
 - La fiche affiche le titre, la description, les photos, la catégorie, les tags, la durée estimée et la distance depuis ma position ou la zone recherchée.
+- L'adresse et le conseil pratique sont affichés lorsqu'ils ont été renseignés.
+- Un bouton « Itinéraire » ouvre le trajet vers le spot dans l'application de cartographie de l'appareil.
 - Les photos sont chargées dans une taille adaptée à l'écran, et seulement lorsqu'elles deviennent visibles.
 - Étant donné qu'un spot est masqué ou supprimé, quand j'essaie d'accéder à sa fiche, alors un message indique que le spot n'est plus disponible.
 - Quand je ferme la fiche, je reviens à la carte avec la même position, le même zoom et les mêmes filtres.
@@ -165,7 +168,7 @@ Chaque User Story possède des critères d'acceptation. Ceux des User Stories P2
 
 **Critères d'acceptation :**
 
-- Le titre, la description, la catégorie, la localisation, la durée estimée et au moins une photo sont obligatoires. Les tags sont facultatifs.
+- Le titre, la description, la catégorie, la localisation, la durée estimée et au moins une photo sont obligatoires. Les tags, l'adresse et le conseil pratique sont facultatifs.
 - Je peux ajouter entre 1 et 5 photos, aux formats JPEG, PNG ou WebP, avec un poids maximal par fichier défini par l'application.
 - Les coordonnées GPS sont validées : latitude entre -90 et 90, longitude entre -180 et 180.
 - Étant donné que le formulaire est valide, quand je le soumets, alors le spot est enregistré avec le statut `PUBLIE`, m'est rattaché comme créateur et apparaît sur la carte.
@@ -284,7 +287,7 @@ Chaque User Story possède des critères d'acceptation. Ceux des User Stories P2
 
 **Critères d'acceptation :**
 
-- Je peux modifier mes informations personnelles depuis mon profil.
+- Je peux modifier mon pseudo, mon prénom, mon nom, ma ville et ma photo de profil depuis mon profil. Le prénom, le nom, la ville et la photo sont facultatifs.
 - Les nouvelles informations sont validées par l'API, notamment l'unicité de l'adresse e-mail.
 - Les modifications sont enregistrées et une confirmation s'affiche.
 - Je ne peux modifier que mon propre profil.

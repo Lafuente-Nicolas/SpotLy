@@ -12,7 +12,7 @@ Projet réalisé dans le cadre du titre professionnel **Concepteur Développeur 
 
 ## État du projet
 
-Le projet est en **phase de conception**. Les spécifications fonctionnelles, les cas d'utilisation et le backlog sont rédigés. La modélisation des données et le développement n'ont pas encore commencé.
+Le projet est en **phase de conception**. Les spécifications fonctionnelles, les cas d'utilisation, le backlog et le modèle conceptuel de données sont rédigés. Le développement n'a pas encore commencé.
 
 ---
 
@@ -104,14 +104,17 @@ Une interface moderne, minimaliste et **mobile-first**, où la carte reste l'él
 
 | Couleur | Code | Usage |
 | --- | --- | --- |
-| Deep Teal | `#0F4C5C` | Navigation, éléments principaux |
-| Sunset Coral | `#FF7F50` | Actions importantes |
-| Sand Beige | `#F5F1E8` | Fond, selon les écrans |
-| Charcoal | `#1E1E1E` | Texte, interface sombre |
-| Sage Green | `#7A9E7E` | Tags, éléments secondaires |
+| Dark Teal | `#0F4C5C` | Couleur principale : boutons, éléments actifs, marqueurs, icônes |
+| Coral Glow | `#FF7F50` | Accent : bouton Ajouter, favoris actifs, notes, actions fortes |
+| Muted Teal | `#7A9E7E` | Secondaire : catégories, tags, zone de sélection sur la carte |
+| Carbon Black | `#1E1E1E` | Texte principal |
+| Blanc | `#FFFFFF` | Fond principal |
+| Gris clair | `#F5F5F5` | Fond secondaire |
 
-- **Typographie** : Inter (SemiBold ou Bold pour les titres, Regular pour le texte, Medium pour les boutons et les tags).
-- **Icônes** : Lucide.
+Les nuances intermédiaires (textes secondaires, bordures, fonds d'icônes) sont des opacités de ces couleurs.
+
+- **Typographie** : Poppins (700 pour les titres, 600 pour les sous-titres et les boutons, 500 pour les libellés, 400 pour le texte).
+- **Icônes** : icônes vectorielles au trait, dans le style de Lucide, regroupées dans un sprite SVG unique.
 
 ---
 
@@ -136,6 +139,14 @@ Une interface moderne, minimaliste et **mobile-first**, où la carte reste l'él
 
 - [Backlog](docs/backlog.md) — suivi dans Trello
 - [Décisions de conception](docs/decisions-de-conception.md)
+
+### Maquettes
+
+- [Maquettes (export Figma)](docs/img/Maquette.png)
+
+### Modélisation des données
+
+- [Modèle Conceptuel de Données (MCD)](docs/mcd.md)
 
 ### Technique et éco-conception
 

@@ -157,12 +157,82 @@ La réinitialisation du mot de passe, la vérification de l'adresse e-mail, la p
 
 **Garanties :**
 
-- **Base de données :** `CHECK (num_nonnulls(spot_id, commentaire_id) = 1)`. Prisma ne sait pas déclarer ce type de contrainte : elle sera ajoutée à la main dans la migration SQL.
+- **Base de données :** une contrainte `CHECK` vérifie qu'une seule des deux colonnes est remplie. Prisma ne sait pas déclarer ce type de contrainte : elle sera ajoutée à la main dans la migration SQL.
 - **Backend :** la même règle est vérifiée lors de la validation de la requête, pour renvoyer un message d'erreur clair.
 
 **Priorité :** US-12 reste en P2. La décision est prise dès maintenant pour que le MCD soit complet.
 
 *Proposition par défaut, à confirmer.*
+
+---
+
+## D11 — Pseudo unique
+
+**Décision :** chaque utilisateur choisit un **pseudo**, unique, affiché comme auteur de ses spots et de ses commentaires.
+
+**Justification :** il permet d'identifier l'auteur d'un contenu sans exposer son adresse e-mail. L'unicité évite les confusions entre deux auteurs.
+
+*Proposition par défaut, à confirmer.*
+
+---
+
+## D12 — Statut des commentaires
+
+**Décision :** un commentaire a les mêmes statuts qu'un spot : `PUBLIE`, `MASQUE` (par un administrateur) et `SUPPRIME` (suppression logique par son auteur ou un administrateur).
+
+**Justification :** le traitement des signalements (US-15) prévoit de masquer un commentaire signalé, ce qui nécessite un statut. Utiliser les mêmes valeurs que pour les spots garde un modèle homogène.
+
+*Proposition par défaut, à confirmer.*
+
+---
+
+## D13 — Traitement des signalements
+
+**Décision :** un signalement a un statut `EN_ATTENTE`, `TRAITE` ou `CLASSE_SANS_SUITE`, et une date de traitement.
+
+**Justification :** US-15 prévoit de masquer le contenu ou de classer le signalement sans suite. Enregistrer l'administrateur qui a traité le signalement n'est pas retenu, pour garder un modèle simple. Cela pourra être ajouté plus tard si un suivi plus précis est nécessaire.
+
+*Proposition par défaut, à confirmer.*
+
+---
+
+## D14 — Adresse et conseil d'un spot
+
+**Décision :** un spot peut avoir une **adresse** et un **conseil** pratique, tous deux facultatifs. Les horaires et les conditions d'accès restent des évolutions.
+
+**Justification :** la maquette affiche l'adresse du spot et des conseils de la communauté. L'adresse est plus lisible que des coordonnées GPS. Un seul champ « conseil » couvre l'essentiel sans alourdir le formulaire.
+
+---
+
+## D15 — Informations du profil
+
+**Décision :** le profil peut contenir un **prénom**, un **nom**, une **ville** et une **photo de profil**, tous facultatifs. Seuls le pseudo, l'e-mail et le mot de passe sont demandés à l'inscription. La date d'acceptation des conditions d'utilisation est enregistrée.
+
+**Justification :** la maquette du profil affiche ces informations. Les rendre facultatives respecte le principe de minimisation des données du RGPD : l'utilisateur choisit ce qu'il partage.
+
+---
+
+## D16 — Liste des catégories
+
+**Décision :** dix catégories sont retenues : Café, Coworking, Restauration, Bar et rooftop, Point de vue, Plage et baignade, Nature et randonnée, Culture et patrimoine, Marché, Activité.
+
+**Justification :** cette liste couvre les besoins des personas (par exemple les cafés et coworkings pour les digital nomads) et supprime les doublons des premières listes (« vue » et « sunset », « balade » et « randonnée »).
+
+---
+
+## D17 — Charte graphique de référence
+
+**Décision :** la charte de la maquette fait référence : police **Poppins**, couleurs Dark Teal `#0F4C5C`, Coral Glow `#FF7F50`, Muted Teal `#7A9E7E`, Carbon Black `#1E1E1E`, blanc et gris clair `#F5F5F5`. Les nuances intermédiaires sont des opacités de ces couleurs.
+
+**Justification :** les premiers documents citaient Inter et d'autres noms de couleurs. La maquette, plus récente et plus aboutie, est retenue pour que le dossier, la maquette et le code utilisent la même charte.
+
+---
+
+## D18 — Bouton « Partager »
+
+**Décision :** le bouton « Partager » reste visible sur la fiche d'un spot dans la maquette, mais le partage n'est pas dans le backlog du MVP. Il sera développé en évolution.
+
+**Justification :** il fait partie de l'expérience envisagée et ne nécessite aucune donnée en base (partage du lien de la fiche). Il n'a donc aucun impact sur le MCD.
 
 ---
 

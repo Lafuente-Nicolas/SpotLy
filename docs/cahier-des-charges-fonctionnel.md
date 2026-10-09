@@ -76,13 +76,15 @@ Les filtres sont combinables. Lorsqu'aucun spot ne correspond, l'application l'i
 | Description | Oui | |
 | Catégorie | Oui | Une seule catégorie principale |
 | Localisation GPS | Oui | Coordonnées validées |
+| Adresse | Non | Adresse lisible, pour l'affichage |
 | Durée estimée | Oui | 30 min, 1 h, 2 h, demi-journée ou journée |
 | Photos | Oui | De 1 à 5 photos |
 | Tags | Non | Choisis dans une liste contrôlée |
+| Conseil | Non | Conseil pratique (ex. : prévoir de bonnes chaussures) |
 | Créateur | Automatique | L'utilisateur connecté |
 | Date de création | Automatique | |
 
-Les informations complémentaires envisagées (moment idéal, conditions conseillées, distance à pied) sont des évolutions.
+Les autres informations complémentaires envisagées (moment idéal, horaires, conditions d'accès) sont des évolutions.
 
 ### 3.2 Catégories et tags
 
@@ -90,7 +92,7 @@ Chaque spot appartient à **une seule catégorie principale**, qui sert à le cl
 
 Les **tags** précisent un spot sans le classer, par exemple : gratuit, wifi, coucher de soleil, street food, accessible à pied, adapté à la pluie.
 
-**Proposition de catégories, à valider :**
+**Catégories retenues (décision D16) :**
 
 | Catégorie | Exemples de spots |
 | --- | --- |
@@ -131,13 +133,12 @@ Les statuts « brouillon » et « archivé » sont des évolutions. Le fait qu'u
 
 | Fonctionnalité | Périmètre |
 | --- | --- |
-| Créer un compte (pseudo, adresse e-mail, mot de passe) | MVP |
+| Créer un compte (pseudo, adresse e-mail, mot de passe, acceptation des conditions d'utilisation) | MVP |
 | Se connecter, se déconnecter | MVP |
 | Consulter son profil et ses contributions | Évolution (P2) |
-| Modifier son profil | Évolution (P3) |
+| Modifier son profil (prénom, nom, ville, photo de profil) | Évolution (P3) |
 | Vérifier son adresse e-mail | Évolution |
 | Réinitialiser son mot de passe | Évolution |
-| Ajouter une photo de profil | Évolution |
 | Renseigner ses préférences | Évolution |
 | Désactiver son compte | Évolution |
 
@@ -226,4 +227,4 @@ Les règles suivantes, envisagées au début du projet, ne sont pas retenues tan
 | **MVP (P1)** | Inscription, connexion, déconnexion ; carte et géolocalisation ; recherche par mot-clé ou par zone ; filtres ; temps disponible ; fiche d'un spot ; ajout, modification et suppression de ses spots ; favoris ; masquage d'un spot par un administrateur |
 | **Évolutions (P2)** | Commentaires, notes, signalements, consultation du profil |
 | **Évolutions (P3)** | Modification du profil, traitement des signalements |
-| **Vision long terme** | Likes, préférences, vérification de l'e-mail, mot de passe oublié, suspension de comptes, gestion des catégories, notifications, partage de spots, événements, offre professionnelle |
+| **Vision long terme** | Likes, préférences, vérification de l'e-mail, mot de passe oublié, suspension de comptes, gestion des catégories, notifications, partage de spots (bouton déjà présent sur la maquette, décision D18), événements, offre professionnelle |
