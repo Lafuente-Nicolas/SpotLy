@@ -12,7 +12,7 @@ Le parcours utilisateur étudié repose principalement sur l'utilisation d'une c
 | Requêtes API                   | Moyen         | Les échanges entre le client et le serveur génèrent du trafic réseau.                 |
 | Base de données                | Moyen         | Les recherches et filtres sollicitent régulièrement la base de données.               |
 | Authentification               | Faible        | Fonction utilisée ponctuellement grâce à la persistance de session.                   |
-| Likes, favoris et commentaires | Faible        | Peu de données échangées lors de ces actions.                                         |
+| Favoris, notes et commentaires | Faible        | Peu de données échangées lors de ces actions.                                         |
 
 L'analyse met en évidence que les images et la carte interactive constituent les principaux postes d'impact du projet.
 

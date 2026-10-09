@@ -34,10 +34,11 @@ Le parcours utilisateur retenu est le suivant :
 2. Autoriser la géolocalisation.
 3. Afficher la carte interactive.
 4. Visualiser les spots à proximité.
-5. Utiliser les filtres de recherche.
-6. Consulter la fiche détaillée d'un spot.
-7. Lire les informations et les photos associées.
-8. Ajouter le spot en favoris.
+5. Indiquer son temps disponible.
+6. Utiliser les filtres de recherche.
+7. Consulter la fiche détaillée d'un spot.
+8. Lire les informations et les photos associées.
+9. Ajouter le spot en favoris.
 
 Ce parcours correspond à l'usage principal de l'application.
 
@@ -45,9 +46,13 @@ Ce parcours correspond à l'usage principal de l'application.
 
 ## Gestion de l'authentification
 
-L'authentification n'est pas incluse dans le parcours principal étudié car elle ne constitue pas la fonction essentielle du service rendu par l'application.
+L'utilisation de Spotly nécessite un compte, y compris pour consulter la carte. Le parcours étudié commence pourtant avec un utilisateur **déjà connecté**.
 
-L'utilisateur s'authentifie lors de la création de son compte ou lors de sa première connexion. Une session persistante lui permet ensuite de rester connecté afin d'éviter des connexions répétées et de simplifier l'expérience utilisateur.
+Ce choix est justifié par la fréquence des actions : l'utilisateur s'authentifie une seule fois, lors de son inscription ou de sa première connexion. Une **session persistante** lui permet ensuite de rester connecté pendant toute sa durée de validité. La connexion n'est donc pas répétée à chaque découverte de spot, contrairement aux étapes du parcours étudié.
+
+Inclure la connexion dans chaque parcours surestimerait son poids dans l'usage réel. Son impact est évalué à part, comme une action ponctuelle (voir l'[analyse des impacts](analyse-des-impacts.md)).
+
+La session persistante est aussi un choix d'éco-conception : elle évite des échanges réseau et des traitements serveur répétés (vérification du mot de passe, création de session).
 
 ---
 
@@ -59,6 +64,7 @@ Le parcours étudié mobilise plusieurs ressources numériques :
 |---------|---------|
 | Ouverture de l'application | HTML, CSS, JavaScript |
 | Géolocalisation | API de géolocalisation du navigateur |
+| Indication du temps disponible | Filtre appliqué par l'API lors du chargement des spots |
 | Affichage de la carte | Tuiles cartographiques MapLibre |
 | Chargement des spots | API REST, base de données PostgreSQL |
 | Consultation d'un spot | API REST, base de données PostgreSQL |
