@@ -63,7 +63,7 @@ Ce choix est particulièrement pertinent pour Spotly car l'application manipule 
 * catégories ;
 * coordonnées géographiques ;
 * commentaires ;
-* likes ;
+* notes ;
 * favoris ;
 * signalements.
 
@@ -138,7 +138,7 @@ L'API permet au frontend de communiquer avec le backend afin de :
 * créer et modifier des spots ;
 * gérer les utilisateurs ;
 * gérer les favoris ;
-* gérer les likes ;
+* gérer les notes ;
 * gérer les commentaires ;
 * gérer les signalements ;
 * effectuer les opérations d'administration.

@@ -35,7 +35,7 @@ Les User Stories sont regroupées en **6 Epics** représentant les principaux do
 
 ### Numérotation
 
-Les identifiants des User Stories sont **stables** : une User Story ajoutée en cours de projet reçoit le numéro suivant, même si elle est rangée dans un Epic placé plus haut. C'est le cas de US-16 et US-17. Cela évite de casser les références dans Trello et dans les autres documents du projet.
+Les identifiants des User Stories sont **stables** : une User Story ajoutée en cours de projet reçoit le numéro suivant, même si elle est rangée dans un Epic placé plus haut. C'est le cas de US-16, US-17 et US-18. Cela évite de casser les références dans Trello et dans les autres documents du projet.
 
 ### Rappel : utilisation de Spotly avec un compte
 
@@ -171,6 +171,23 @@ Chaque User Story possède des critères d'acceptation. Ceux des User Stories P2
 - Étant donné que le formulaire est valide, quand je le soumets, alors le spot est enregistré avec le statut `PUBLIE`, m'est rattaché comme créateur et apparaît sur la carte.
 - Étant donné qu'une donnée est invalide, quand je soumets le formulaire, alors le spot n'est pas créé et chaque erreur est indiquée à côté du champ concerné.
 - Toutes les règles sont vérifiées par l'API, y compris le nombre, le type et le poids des photos.
+
+### US-18 — Gérer ses spots
+
+> En tant qu'utilisateur connecté, je souhaite modifier ou supprimer les spots que j'ai publiés, afin de corriger une information erronée ou de retirer un spot qui n'est plus pertinent.
+
+**Priorité : P1 — MVP**
+
+**Critères d'acceptation :**
+
+- Depuis la fiche d'un spot dont je suis l'auteur, je peux le modifier ou le supprimer. Ces actions n'apparaissent pas sur les spots des autres utilisateurs.
+- La modification applique les mêmes règles de validation que la création (US-07) : champs obligatoires, 1 à 5 photos, coordonnées GPS valides.
+- Étant donné que je modifie un spot, quand j'enregistre, alors les changements sont visibles immédiatement sur la carte et sur la fiche.
+- Les photos retirées lors d'une modification sont aussi supprimées du service de stockage des médias.
+- Étant donné que je demande la suppression d'un spot, quand je confirme, alors son statut passe à `SUPPRIME` et il n'apparaît plus sur la carte, dans les recherches ni dans les favoris.
+- Une confirmation m'est demandée avant la suppression.
+- Un spot masqué par un administrateur ne peut pas être republié par son auteur en le modifiant.
+- L'API vérifie que l'utilisateur est l'auteur du spot ou un administrateur. Toute autre requête est refusée.
 
 ---
 
@@ -317,6 +334,7 @@ Chaque User Story possède des critères d'acceptation. Ceux des User Stories P2
 - US-16 — Indiquer son temps disponible
 - US-06 — Consulter un spot
 - US-07 — Ajouter un spot
+- US-18 — Gérer ses spots
 - US-08 — Ajouter un spot aux favoris
 - US-09 — Consulter ses favoris
 - US-17 — Masquer un spot
@@ -388,7 +406,7 @@ La priorité est donnée aux fonctionnalités permettant de réaliser la proposi
 
 La **carte, la recherche, les filtres, le temps disponible et la consultation des spots** sont prioritaires car ils permettent directement à l'utilisateur de découvrir des lieux adaptés à sa situation. Le **temps disponible** (US-16) fait l'objet d'une User Story dédiée car il constitue l'élément différenciant de Spotly : sans lui, l'application se limiterait à une carte de lieux.
 
-L'**ajout de spots** fait partie du MVP car les contenus de Spotly proviennent de la communauté.
+L'**ajout de spots** fait partie du MVP car les contenus de Spotly proviennent de la communauté. La **gestion de ses spots** (US-18) l'accompagne : les spots étant publiés immédiatement, leur auteur doit pouvoir corriger une erreur, par exemple sur la durée ou la position, qui fausserait sinon les résultats liés au temps disponible.
 
 Les **favoris** sont également intégrés au MVP car ils permettent à l'utilisateur de conserver les spots qui l'intéressent.
 
