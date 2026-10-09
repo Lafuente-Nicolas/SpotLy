@@ -147,6 +147,7 @@ Les nuances intermédiaires (textes secondaires, bordures, fonds d'icônes) sont
 ### Modélisation des données
 
 - [Modèle Conceptuel de Données (MCD)](docs/mcd.md)
+- [Modèle Logique de Données (MLD)](docs/mld.md)
 
 ### Technique et éco-conception
 
